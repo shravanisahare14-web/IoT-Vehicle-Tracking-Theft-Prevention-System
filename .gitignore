@@ -37,7 +37,6 @@ instance/
 # Generated Reports
 data/*.pdf
 data/*.csv
-data/reports.json
 
 # Temporary Files
 *.tmp
@@ -60,3 +59,5 @@ htmlcov/
 # Secrets
 secrets.json
 credentials.json
+
+data/reports.json

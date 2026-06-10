@@ -1,0 +1,9 @@
+{
+    "lat": 17.3879,
+    "lon": 78.4902,
+    "speed": 53,
+    "engine": "ON",
+    "threat": "ALERT",
+    "geofence": "BREACHED",
+    "distance_from_center": 491.86
+}

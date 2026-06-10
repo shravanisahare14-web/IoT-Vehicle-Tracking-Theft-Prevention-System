@@ -37,10 +37,7 @@ instance/
 # Generated Reports
 data/*.pdf
 data/*.csv
-
-# Runtime Data Files
-data/latest_location.json
-data/analytics.json
+data/reports.json
 
 # Temporary Files
 *.tmp

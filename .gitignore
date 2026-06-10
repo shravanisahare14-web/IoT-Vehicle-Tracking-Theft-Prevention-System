@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Environment Variables
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build Files
+build/
+dist/
+*.egg-info/
+
+# Flask
+instance/
+.webassets-cache
+
+# Generated Reports
+data/*.pdf
+data/*.csv
+
+# Runtime Data Files
+data/latest_location.json
+data/analytics.json
+
+# Temporary Files
+*.tmp
+*.bak
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Render
+.render/
+
+# Python Cache
+.pytest_cache/
+.mypy_cache/
+
+# Coverage Reports
+htmlcov/
+.coverage
+
+# Secrets
+secrets.json
+credentials.json

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+   content="width=device-width, initial-scale=1.0">
+
+<title>GuardianTrack Analytics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="app">
+
+
+<aside class="sidebar">
+
+    <div>
+
+        <div class="logo">
+
+            <h1>GUARDIANTRACK</h1>
+
+            <p>Vehicle Intelligence Platform</p>
+
+        </div>
+
+        <nav>
+
+            <a href="/">
+                Dashboard
+            </a>
+
+            <a href="/analytics"
+               class="active">
+
+                Analytics
+
+            </a>
+
+        </nav>
+
+    </div>
+
+    <div class="radar-card">
+
+        <div class="radar"></div>
+
+        <h3>SYSTEM STATUS</h3>
+
+        <p>OPERATIONAL</p>
+
+    </div>
+
+</aside>
+
+<main class="main-content">
+
+    <div class="topbar">
+
+        <div>
+
+            <h1>Analytics Center</h1>
+
+            <p>
+                Historical Insights • Threat Intelligence • Vehicle Analytics
+            </p>
+
+        </div>
+
+    </div>
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <h4>Total Distance</h4>
+
+            <h2 id="total-distance">
+                0 km
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h4>Average Speed</h4>
+
+            <h2 id="avg-speed">
+                0 km/h
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h4>Breaches</h4>
+
+            <h2 id="breaches">
+                0
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h4>Threat Events</h4>
+
+            <h2 id="threat-events">
+                0
+            </h2>
+
+        </div>
+
+    </section>
+
+    <div class="tracking-panel">
+
+        <div class="panel-title">
+
+            VEHICLE SPEED ANALYTICS
+
+        </div>
+
+        <canvas id="speedChart"></canvas>
+
+    </div>
+
+    <br>
+
+    <div class="tracking-panel">
+
+        <div class="panel-title">
+
+            THREAT DETECTION TIMELINE
+
+        </div>
+
+        <canvas id="threatChart"></canvas>
+
+    </div>
+
+    <br>
+
+    <div class="tracking-panel">
+
+        <div class="panel-title">
+
+            EXPORT ANALYTICS REPORTS
+
+        </div>
+
+        <br>
+
+        <a href="/export/pdf">
+
+            <button class="report-btn">
+
+                Export PDF Report
+
+            </button>
+
+        </a>
+
+        <a href="/export/csv">
+
+            <button class="report-btn">
+
+                Export CSV Report
+
+            </button>
+
+        </a>
+
+    </div>
+
+</main>
+
+
+</div>
+
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+
+</body>
+
+</html>

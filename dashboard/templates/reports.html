@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+   content="width=device-width, initial-scale=1.0">
+
+<title>GuardianTrack Reports</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+
+<div>
+
+<div class="logo">
+
+<h1>GUARDIANTRACK</h1>
+
+<p>Vehicle Intelligence Platform</p>
+
+</div>
+
+<nav>
+
+<a href="/">Dashboard</a>
+
+<a href="/analytics">Analytics</a>
+
+<a href="/reports" class="active">Reports</a>
+
+</nav>
+
+</div>
+
+</aside>
+
+<main class="main-content">
+
+<div class="topbar">
+
+<h1>Reports Center</h1>
+
+</div>
+
+<section class="stats-grid">
+
+<div class="stat-card">
+<h4>Current Speed</h4>
+<h2 id="current-speed">0 km/h</h2>
+</div>
+
+<div class="stat-card">
+<h4>Threat Level</h4>
+<h2 id="threat-level">SAFE</h2>
+</div>
+
+<div class="stat-card">
+<h4>Total Distance</h4>
+<h2 id="distance">0 km</h2>
+</div>
+
+<div class="stat-card">
+<h4>Average Speed</h4>
+<h2 id="avg-speed">0 km/h</h2>
+</div>
+
+</section>
+
+<section class="middle-grid">
+
+<div class="tracking-panel">
+
+<div class="panel-title">
+
+LIVE VEHICLE REPORT
+
+</div>
+
+<div class="security-item">
+<span>Latitude</span>
+<span id="r-lat">0</span>
+</div>
+
+<div class="security-item">
+<span>Longitude</span>
+<span id="r-lon">0</span>
+</div>
+
+<div class="security-item">
+<span>Engine Status</span>
+<span id="engine-status">OFF</span>
+</div>
+
+<div class="security-item">
+<span>Threat Events</span>
+<span id="threat-events">0</span>
+</div>
+
+<div class="security-item">
+<span>Breaches</span>
+<span id="breaches">0</span>
+</div>
+
+<div class="security-item">
+<span>Maximum Speed</span>
+<span id="max-speed">0</span>
+</div>
+
+<div class="security-item">
+<span>Minimum Speed</span>
+<span id="min-speed">0</span>
+</div>
+
+</div>
+
+<div class="security-panel">
+
+<div class="panel-title">
+
+EXPORT REPORTS
+
+</div>
+
+<button class="report-btn">
+Export PDF
+</button>
+
+<br><br>
+
+<button class="report-btn">
+Export CSV
+</button>
+
+</div>
+
+</section>
+
+<br>
+
+<div class="tracking-panel">
+
+<div class="panel-title">
+
+RECENT SECURITY EVENTS
+
+</div>
+
+<table
+style="
+width:100%;
+color:white;
+border-collapse:collapse;
+">
+
+<thead>
+
+<tr>
+
+<th>Time</th>
+
+<th>Event</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="reports-body">
+
+</tbody>
+
+</table>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/reports.js') }}"></script>
+
+</body>
+
+</html>

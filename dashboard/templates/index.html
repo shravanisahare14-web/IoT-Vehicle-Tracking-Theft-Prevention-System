@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GuardianTrack AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <h1>GUARDIANTRACK</h1>
+
+                <p>Vehicle Intelligence Platform</p>
+
+            </div>
+
+            <nav>
+
+            
+
+                <a href="/" class="active">
+                    Dashboard
+                </a>
+
+                <a href="/analytics">
+                Analytics
+                </a>
+
+                
+
+
+            </nav>
+
+        </div>
+
+        <div class="radar-card">
+
+            <div class="radar"></div>
+
+            <h3>SYSTEM STATUS</h3>
+
+            <p>OPERATIONAL</p>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>Vehicle Security Intelligence Platform</h1>
+
+                <p>
+                    Real-Time Tracking • Threat Detection • Geofence Protection
+                </p>
+
+            </div>
+
+            <div class="live-badge">
+
+                <span class="pulse"></span>
+
+                LIVE
+
+            </div>
+
+        </div>
+
+        <!-- KPI CARDS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <h4>Vehicle Status</h4>
+
+                <h2 id="vehicle-status">
+                    ONLINE
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h4>Threat Level</h4>
+
+                <h2 id="threat-value">
+                    SAFE
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h4>Current Speed</h4>
+
+                <h2 id="speed-value">
+                    0 km/h
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h4>Engine Status</h4>
+
+                <h2 id="engine-value">
+                    OFF
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h4>Latitude</h4>
+
+                <h2 id="lat-value">
+                    0.0000
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h4>Longitude</h4>
+
+                <h2 id="lon-value">
+                    0.0000
+                </h2>
+
+            </div>
+
+        </section>
+
+        <!-- MAIN GRID -->
+
+        <section class="middle-grid">
+
+            <!-- MAP SECTION -->
+
+            <div class="tracking-panel">
+
+                <div class="panel-title">
+                    LIVE TACTICAL TRACKING
+                </div>
+
+                <!-- FLOATING HUD -->
+
+                <div class="tactical-hud">
+
+                    <div class="hud-box">
+
+                        <div class="hud-label">
+                            STATUS
+                        </div>
+
+                        <div class="hud-value"
+                             id="tracking-status">
+
+                            TRACKING
+
+                        </div>
+
+                    </div>
+
+                    <div class="hud-box">
+
+                        <div class="hud-label">
+                            SIGNAL
+                        </div>
+
+                        <div class="hud-value"
+                             id="signal-status">
+
+                            STRONG
+
+                        </div>
+
+                    </div>
+
+                    <div class="hud-box">
+
+                        <div class="hud-label">
+                            ZONE
+                        </div>
+
+                        <div class="hud-value"
+                             id="zone-status">
+
+                            SAFE
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- MAP -->
+
+                <div id="map"></div>
+
+            </div>
+
+            <!-- SECURITY -->
+
+            <div class="security-panel">
+
+                <div class="panel-title">
+                    SECURITY CENTER
+                </div>
+
+                <div class="security-card">
+
+                    <div class="security-label">
+                        GEOFENCE STATUS
+                    </div>
+
+                    <div class="security-value"
+                         id="geo-status">
+
+                        SAFE
+
+                    </div>
+
+                </div>
+
+                <div class="security-card">
+
+                    <div class="security-label">
+                        THREAT SCORE
+                    </div>
+
+                    <div class="security-value"
+                         id="threat-score">
+
+                        LOW
+
+                    </div>
+
+                </div>
+
+                <div class="security-card">
+
+                    <div class="security-label">
+                        LAST ALERT
+                    </div>
+
+                    <div class="security-value"
+                         id="last-alert">
+
+                        NONE
+
+                    </div>
+
+                </div>
+
+                <div class="security-card">
+
+                    <div class="security-label">
+                        DISTANCE FROM CENTER
+                    </div>
+
+                    <div class="security-value"
+                         id="distance-center">
+
+                        0 m
+
+                    </div>
+
+                </div>
+
+                <div class="security-card">
+
+                    <div class="security-label">
+                        ENGINE LOCK
+                    </div>
+
+                    <div class="security-value"
+                         id="engine-lock">
+
+                        UNLOCKED
+
+                    </div>
+
+                </div>
+
+                <div class="security-card">
+
+                    <div class="security-label">
+                        UNAUTHORIZED MOVEMENT
+                    </div>
+
+                    <div class="security-value"
+                         id="movement-count">
+
+                        0
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+
+</html>
